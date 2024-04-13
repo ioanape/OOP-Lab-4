@@ -83,4 +83,10 @@ void FruitRepo::printFruits() {
         std::cout<<"Name: "<<_fruits[i]->get_name()<<", Origin: " << _fruits[i]->get_origin()<< ", Expiry Date: " << _fruits[i]->get_expiryDate()<< ", Quantity: " << _fruits[i]->get_quantity() << ", Price: " << _fruits[i]->get_price() <<'\n';
 }
 
+void FruitRepo::printChangedFruits(std::vector<std::shared_ptr<Fruit>> changed) {
+    _fruits=changed;
+    for(int i=0;i<_fruits.size();i++)
+        std::cout<<"Name: "<<_fruits[i]->get_name()<<", Origin: " << _fruits[i]->get_origin()<< ", Expiry Date: " << _fruits[i]->get_expiryDate()<< ", Quantity: " << _fruits[i]->get_quantity() << ", Price: " << _fruits[i]->get_price() <<'\n';
+
+}
 

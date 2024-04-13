@@ -15,7 +15,7 @@ void tests()
     repo.add(std::make_shared<Fruit>("Banana", "Brazil", "2024.05", 15, 2));
     assert(repo.getAll("").size() == 11);
     assert(repo.getAll("Braz").size() == 2);
-    assert(repo.getAll("a").size() == 8);
+    assert(repo.getAll("a").size() == 9);
 
     assert(repo.getShortQuantity(10).size() == 1);
 

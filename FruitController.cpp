@@ -1,4 +1,5 @@
 #include "FruitController.h"
+#include "iostream"
 
 void FruitController::add(std::string name, std::string origin, std::string expiryDate, int quantity, int price) {
     repo.add(std::make_shared<Fruit>(name,origin,expiryDate,quantity,price));
@@ -9,20 +10,20 @@ void FruitController::remove(std::string name, std::string origin) {
     repo.remove(fruitRemove);
 }
 
-std::vector<std::shared_ptr<Fruit>> FruitController::find(std::string origin) {
-    return repo.findByOrigin(origin);
+void FruitController::find(std::string origin) {
+    repo.printChangedFruits(repo.findByOrigin(origin));
 }
 
-std::vector<std::shared_ptr<Fruit>> FruitController::listAll(std::string filterName) {
-    return repo.getAll(filterName);
+void FruitController::listAll(std::string filterName) {
+    repo.printChangedFruits(repo.getAll(filterName));
 }
 
-std::vector<std::shared_ptr<Fruit>> FruitController::listShortQuantity(int specifiedQuantity) {
-    return repo.getShortQuantity(specifiedQuantity);
+void FruitController::listShortQuantity(int specifiedQuantity) {
+    repo.printChangedFruits(repo.getShortQuantity(specifiedQuantity));
 }
 
-std::vector<std::shared_ptr<Fruit>> FruitController::listExpiryDate() {
-    return repo.sortExpiryDate();
+void FruitController::listExpiryDate() {
+    repo.printChangedFruits(repo.sortExpiryDate());
 }
 
 void FruitController::listAllFruits() {

@@ -9,10 +9,10 @@ private:
 public:
     void add(std::string name, std::string origin, std::string expiryDate, int quantity, int price);
     void remove(std::string name, std::string origin);
-    std::vector<std::shared_ptr<Fruit>> find(std::string origin);
-    std::vector<std::shared_ptr<Fruit>> listAll(std::string filterName);
-    std::vector<std::shared_ptr<Fruit>> listShortQuantity(int specifiedQuantity);
-    std::vector<std::shared_ptr<Fruit>> listExpiryDate();
+    void find(std::string origin);
+    void listAll(std::string filterName);
+    void listShortQuantity(int specifiedQuantity);
+    void listExpiryDate();
     void listAllFruits();
 
 };

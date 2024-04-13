@@ -17,6 +17,8 @@ public:
     std::vector<std::shared_ptr<Fruit>> sortExpiryDate();
     std::vector<std::shared_ptr<Fruit>> findByOrigin(std::string origin);
     void printFruits();
+    void printChangedFruits(std::vector<std::shared_ptr<Fruit>> changed);
+
 };
 
 
